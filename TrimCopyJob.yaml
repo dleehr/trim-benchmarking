@@ -17,9 +17,13 @@ spec:
         volumeMounts:
         - mountPath: /calrissian/input-data
           name: calrissian-input-data
+        - mountPath: /tmp
+          name: tmp
       restartPolicy: Never
       volumes:
       - name: calrissian-input-data
         persistentVolumeClaim:
           claimName: calrissian-input-data
+      - name: tmp
+        emptyDir: {}
   backOffLimit: 0
