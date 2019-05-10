@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trim-copy
+spec:
+  template:
+    spec:
+      containers:
+      - name: trim-copy
+        image: dleehr/trim-copy:0.1
+        command: ["/opt/copy-and-trim.sh"]
+        args:
+          - "/calrissian/input-data/user-data/dds_Sharma-rawData_rawData_SA05051_S16_L008_R1_001.fastq.gz"
+          - "/calrissian/input-data/user-data/dds_Sharma-rawData_rawData_SA05051_S16_L008_R2_001.fastq.gz"
+          - "/tmp"
+        volumeMounts:
+        - mountPath: /calrissian/input-data
+          name: calrissian-input-data
+      restartPolicy: Never
+      volumes:
+      - name: calrissian-input-data
+        persistentVolumeClaim:
+          claimName: calrissian-input-data
+  backOffLimit: 0
