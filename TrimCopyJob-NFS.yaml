@@ -19,7 +19,7 @@ spec:
   template:
     spec:
       containers:
-      - name: trim-copy
+      - name: trim-copy-nfs
         image: dleehr/trim-copy:0.1
         command: ["/opt/copy-and-trim.sh"]
         args:
