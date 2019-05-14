@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pi-200000
+  name: pi-10000
 spec:
   template:
     spec:
       containers:
-      - name: pi-200000
+      - name: pi-10000
         image: perl
-        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(200000)"]
+        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(10000)"]
       restartPolicy: Never
   backoffLimit: 4
 
