@@ -1,3 +1,4 @@
 FROM perl
 
-CMD ["perl",  "-Mbignum=bpi", "-wle", "print bpi(10000)"]
+ADD pi.sh /pi.sh
+CMD ["/pi.sh"]

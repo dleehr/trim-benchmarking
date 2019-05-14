@@ -1,6 +1,6 @@
 #!/bin/bash
 
 date
-docker run pi
+perl -Mbignum=bpi -wle "print bpi(10000)"
 date
 
