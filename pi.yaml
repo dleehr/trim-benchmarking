@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: pi-10000
-        image: dleehr/perl
+        image: dleehr/pi
       restartPolicy: Never
   backoffLimit: 4
 
